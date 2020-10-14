@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Container, Typography } from "@material-ui/core";
 import CardSlider from "../CardSlider";
@@ -17,7 +17,7 @@ const AppContainer = () => {
   return (
     <CustomWrapper>
       <Container>
-        <CustomHeader>Most Frequently Order</CustomHeader>
+        <CustomHeader>Most Frequently Ordered</CustomHeader>
         <CardSlider />
       </Container>
     </CustomWrapper>

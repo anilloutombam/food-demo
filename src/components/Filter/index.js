@@ -67,11 +67,15 @@ const CustomCheckBox = styled(Checkbox)`
     color: #adff2f;
   }
 `;
+
+const CustomClear = styled(Typography)`
+  && {
+    cursor: pointer;
+  }
+`;
 const initialValues = {
   amount: [500, 2000],
-  format: ["Main Buffet"],
-  occasion: [],
-  query: [],
+
 };
 
 const multipleCheck = [
@@ -94,9 +98,6 @@ function Filter() {
   const [expandPrice, setExpandPrice] = useState(true);
   const [expandOccasion, setExpandOccasion] = useState(true);
 
-  const handleClear = () => {
-    setValues({ ...initialValues });
-  };
   const handleFieldChange = (event, field, value) => {
     setValues((prevValues) => ({
       ...prevValues,
@@ -104,29 +105,8 @@ function Filter() {
     }));
   };
 
-  const handleQueryAdd = () => {
-    setValues((prevValues) => {
-      const newValues = { ...prevValues };
-
-      if (newValues.query && !newValues.query.includes(newValues.query)) {
-        newValues.query = [...newValues.query];
-        newValues.query.push(newValues.query);
-      }
-
-      newValues.query = "";
-
-      return newValues;
-    });
-  };
-
-  const handleQueryDelete = (query) => {
-    setValues((prevValues) => {
-      const newValues = { ...prevValues };
-
-      newValues.query = newValues.query.filter((t) => t !== query);
-
-      return newValues;
-    });
+  const handleClear = () => {
+    setValues({ ...initialValues });
   };
 
   const handleToggleFormat = () => {
@@ -146,7 +126,7 @@ function Filter() {
       <Wrapper>
         <CustomContainer>
           <Typography>Filters</Typography>
-          <Typography onClick={handleClear}> Reset all </Typography>
+          <CustomClear onClick={handleClear}> Reset all </CustomClear>
         </CustomContainer>
         <div>
           <CustomFormatContainer onClick={handleToggleFormat}>
@@ -197,16 +177,13 @@ function Filter() {
           <Divider />
           <Collapse in={expandOccasion}>
             <CustomForm>
-              {multipleCheckOccasion.map(item => (
-                  <FormControlLabel
+              {multipleCheckOccasion.map((item) => (
+                <FormControlLabel
                   control={<CustomCheckBox />}
                   label={item.value}
                   value={item.id}
                 />
-                
-
               ))}
-            
             </CustomForm>
             <Divider />
           </Collapse>

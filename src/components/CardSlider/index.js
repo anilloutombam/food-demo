@@ -28,7 +28,7 @@ const StyledSlider = styled(Slider)`
 class CardSlider extends Component {
   render() {
     const settings = {
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 4,

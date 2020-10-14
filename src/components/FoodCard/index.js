@@ -17,6 +17,7 @@ import styled from "styled-components";
 import StarIcon from "@material-ui/icons/Star";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const CustomCard = styled(Card)`
   margin-left: 0.5rem;
@@ -135,8 +136,14 @@ const CustomButton = styled(Button)`
       background-color: #ffff;
 
     }
+    .MuiSvgIcon-root {
+      font-size: .9rem;
+      color: #FF6347	;
+
+    }
   }
 `;
+
 
 const FoodCard = ({
   foodName,
@@ -181,6 +188,7 @@ const FoodCard = ({
               )}
               <CustomButtonDiv>
                 <CustomButton variant="outlined" size="small">
+                  <FiberManualRecordIcon />
                   New
                 </CustomButton>
               </CustomButtonDiv>
