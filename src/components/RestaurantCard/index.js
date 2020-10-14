@@ -52,16 +52,24 @@ const CustomLabel = styled(Typography)`
   }
 `;
 const RestaurantCard = ({ hotelName, location, foodImage }) => {
+
+
   return (
     <>
-      <CustomCard>
+      <CustomCard>  
+ 
+
         <CardActionArea>
           <CardMedia
             component="img"
             image={foodImage}
             title="Contemplative Reptile"
             height="140"
-          />
+          >
+            
+          </CardMedia>
+         
+               
           <CustomContainer>
             <CustomCardContent>
               <CustomHeaderTitle gutterBottom>{hotelName}</CustomHeaderTitle>

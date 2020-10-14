@@ -13,7 +13,6 @@ import {
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styled from "styled-components";
-import { CheckBox } from "@material-ui/icons";
 
 const CustomFormatContainer = styled.div`
   display: flex;
@@ -92,8 +91,8 @@ const multipleCheckOccasion = [
 function Filter() {
   const [values, setValues] = useState({ ...initialValues });
   const [expandFormat, setExpandFormat] = useState(true);
-  const [expandPrice, setExpandPrice] = useState(false);
-  const [expandOccasion, setExpandOccasion] = useState(false);
+  const [expandPrice, setExpandPrice] = useState(true);
+  const [expandOccasion, setExpandOccasion] = useState(true);
 
   const handleClear = () => {
     setValues({ ...initialValues });
@@ -169,7 +168,7 @@ function Filter() {
           </Collapse>
           <CustomPriceWrap>
             <CustomFormatContainer onClick={handleTogglePrice}>
-              <Typography> Price ₹500-₹2000</Typography>
+              <Typography> Price ₹500 - ₹2000</Typography>
               {expandPrice ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </CustomFormatContainer>
 

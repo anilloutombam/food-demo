@@ -9,6 +9,10 @@ import Item2 from "../../assets/2.jpg";
 import Item3 from "../../assets/3.jpg";
 import Item4 from "../../assets/4.jpg";
 import Item5 from "../../assets/5.jpg";
+import Item6 from "../../assets/12.jpg";
+import Item7 from "../../assets/13.jpg";
+import Item8 from "../../assets/14.jpg";
+
 import RestaurantCard from "../RestaurantCard";
 
 const StyledSlider = styled(Slider)`
@@ -29,6 +33,8 @@ class CardSlider extends Component {
       slidesToShow: 4,
       slidesToScroll: 4,
       initialSlide: 0,
+      autoplay: true,
+
 
       responsive: [
         {
@@ -66,10 +72,10 @@ class CardSlider extends Component {
           <RestaurantCard hotelName="House Warming" foodImage={Item2} location="Whitefield"  />
           <RestaurantCard hotelName="Malabar Hotel" foodImage={Item3}location="Kasturi Nagar"  />
           <RestaurantCard hotelName="Punjabi Dhaba" foodImage={Item4}location="Horamavu"  />
-          <RestaurantCard hotelName="Malabar Hotel" foodImage={Item5}location="Horamavu"  />
-          <RestaurantCard hotelName="Punjabi Dhaba" foodImage={Item5}location="Horamavu"  />
-          <RestaurantCard hotelName="Malabar Hotel" foodImage={Item5}location="Horamavu"  />
-          <RestaurantCard hotelName="Punjabi Dhaba" foodImage={Item5}location="Horamavu"  />
+          <RestaurantCard hotelName="Malabar Hotel" foodImage={Item5}location="Chandmari"  />
+          <RestaurantCard hotelName="Punjabi Dhaba" foodImage={Item6}location="Ganeshgudi"  />
+          <RestaurantCard hotelName="Malabar Hotel" foodImage={Item7}location="Electronic City"  />
+          <RestaurantCard hotelName="Punjabi Dhaba" foodImage={Item8}location="Horamavu"  />
         </StyledSlider>
       </div>
     );
